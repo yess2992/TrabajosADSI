@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>script</title>
-	<link rel="shortcut icon" href="Imágenes/loguito.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script JS</title>
 </head>
 <body>
-	<h1>scripts códigos ejecutables</h1>
-	<script type="text">
-	</script>
-	
+    <h1 id="username"></h1>
+
+    <script>
+        var username = document.getElementById('username');
+        var question = prompt('Cuál es su Nombre de Usuario ?');
+        if (question)
+            username.innerHTML = "Welcome: " + question;
+        else
+            username.innerHTML = "Welcome: Guess";
+    </script>
 </body>
 </html>
