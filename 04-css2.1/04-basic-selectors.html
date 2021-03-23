@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic Selectors</title>
+	<style>
+		* {
+			border: 2px dotted coral;
+			margin:10px;
+			padding:10px;
+
+		}
+		h2 {
+			background-color: darkgray;
+		}
+		p span {
+			background-color: sienna;
+			margin:0px;
+			padding:0px;
+		}
+		.highlight {
+			background-color: cadetblue;
+		}
+		#elem03 {
+			background-color: darkorchid;
+			color:black;
+		}
+		div.box p.first {
+			background-color: black;
+			color: silver;
+		}
+	</style>
+</head>
+<body>
+	<h1>Basic Selectors</h1>
+	<h2>Universal Selector: * </h2>
+	<div>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing, elit. Recusandae animi dolorum excepturi blanditiis consequuntur repellat, ea velit similique eius porro ratione aperiam, fugit, minus culpa repudiandae, sed. A, iure iusto!
+		</p>
+	</div>
+	<h2>Type/Label Selector: h2 </h2>
+	<h2>Descendant Selector: p span </h2>
+		<div>
+		<p>
+			<span> Lorem ipsum dolor </span> sit amet consectetur adipisicing, elit. Recusandae animi dolorum excepturi blanditiis consequuntur repellat, ea velit similique eius <span> porro ratione aperiam </span>, fugit, minus culpa repudiandae, sed. A, iure iusto!
+		</p>
+	</div>
+	<h2 class="highlight">Class Selector: .highlight </h2>
+	<h2>Id Selector: #elem03 </h2>
+	<!--ol>li{Element $}#elem$$*5-->
+	<ol>
+		<li id="elem01">#elem1</li>
+		<li id="elem02">#elem2</li>
+		<li id="elem03">#elem3</li>
+		<li id="elem04">#elem4</li>
+		<li id="elem05">#elem5</li>
+	</ol>
+	<h2>Combine Selector: div.box p.first </h2>
+	<div class="box">
+		<p class="first">Lorem</p>
+		<p>Lorem</p>
+		<p>Lorem</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Advance Selectors</title>
+	<style>
+		ul > li {
+			background-color: deepskyblue;
+			margin: 5px;
+			padding: 5px;
+;
+		}
+		ul li + li + li {
+			background-color: palegreen;
+		}
+		li[class] {
+			background-color: rosybrown;
+		}
+	</style>
+</head>
+<body>
+	<h1>Advance Selectors</h1>
+	<h2>Children Selector: ul > li</h2>
+	<h2>Adjacent Selector: ul li + li + li</h2>
+	<h2>Atribute Selector: li[class]</h2>
+
+
+	<!--ol>(li>ul>li*3)*2-->
+	<ol>
+		<li>
+			Back to the future
+			<ul>
+				<li>Dr. Brown</li>
+				<li class="highlight">Marty McFly</li>
+				<li>Jennifer</li>
+				<li>Biff Tannen</li>
+			</ul>
+		</li>
+		<li>
+			Resident Evil
+			<ul>
+				<li class="highlight">Alice</li>
+				<li>Matt</li>
+				<li>Reina Roja</li>
+				<li>Albert Wesker</li>
+			</ul>
+		</li>
+	</ol>
+</body>
+</html>
