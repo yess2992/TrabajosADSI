@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Borders</title>
+	<style>
+		section.box {
+			border-color : #008B8B;
+			border-style: solid;
+			height: 200px;
+			line-height: 10em;
+			margin: 40px auto;
+			text-align: center;
+			width: 400px;
+		}
+		section.box.box-width {
+			border-top-width: 10px;
+			/*btw10px*/
+			/*brw20*/
+			border-right-width: 20px;
+			border-bottom-width: 10px;
+			border-left-width: 20px;
+			/* Shorthand */
+			border-width: 10px 20px;
+			/*bw10-20*/
+		}
+
+		section.box.box-style {
+			border-color: #00FF7F;
+			border-width: 8px;
+			border-top-style: solid;
+			border-right-style: dotted;
+			border-bottom-style: dashed;
+			border-left-style: double;
+			/* Shorthand */
+			border-style: solid dotted dashed double;
+		}
+
+		section.box.box-color {
+			border-width: 9px;
+			border-top-color: #90EE90;
+			border-right-color: #20B2AA;
+			border-bottom-color: #9370DB;
+			border-left-color:#FA8072;
+			/* Shorthand */
+			border-color: #90EE90 #20B2AA #9370DB #FA8072;
+		}
+
+		section.box-all {
+			border-width: 6px;
+			border-style: dotted;
+			border-color: #808;
+			/* Shorthand */
+			bottom: 6px dotted #808;
+		}
+	</style>
+</head>
+<body>
+	<section class="box box-width">
+		<h2>BORDER WITH</h2>
+	</section>
+	<section class="box box-style">
+		<h2>BORDER STYLE</h2>
+	</section>
+	<section class="box box-color">
+		<h2>BORDER COLOR</h2>
+	</section>
+	<section class="box box-all">
+		<h2>BORDER ALL</h2>
+	</section>
+</body>
+</html>
