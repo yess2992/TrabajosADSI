@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Position Relative</title>
+	<style>
+		main {
+			margin: 40px auto;
+			width: 400px;
+		}
+		section.bigbox {
+			border: 2px solid #777;
+			padding:0px 8px;
+		}
+		section.bigbox div {
+			background-color: #fff;
+			border: 1px solid #777;
+			display: inline-block;
+			height: 50px;
+			margin: 10px 0px;
+			text-align: center;
+			line-height: 3em;
+			padding: 8px;
+			width: 106px;
+		}
+		section.bigbox div.box4 { 
+			display: block;
+			margin-top: 0px;
+			width: 362px;
+		}
+		section.bigbox div.box-relative {
+			position: relative;
+			left: 60px; top: 40px;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h3>Normal Position</h3>
+		<section class="bigbox">
+			<div class="box1">Box1</div>
+			<div class="box2">Box2</div>
+			<div class="box3">Box3</div>
+			<div class="box4">Box4</div>
+		</section>
+		<h3>Relative Position in Box 2</h3>
+		<section class="bigbox">
+			<div class="box1">Box1</div>
+			<div class="box2 box-relative">Box2</div>
+			<div class="box3">Box3</div>
+			<div class="box4">Box4</div>
+		</section>
+	</main>
+</body>
+</html>
