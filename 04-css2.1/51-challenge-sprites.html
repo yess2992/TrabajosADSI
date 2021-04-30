@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Challenge Sprites</title>
+	<style>
+		body {
+			background-color: #FFFAF0;
+			font-family: Arial;
+		}
+		main.pag {
+			background-color: #16a054;
+			margin: 1px auto;
+			padding: 10px;
+		}
+
+		
+		article {
+			height: 209px;
+		}
+		section.logo {
+			background: url(imgs/spriteweb.png) no-repeat -13px -438px;
+			height: 120px;
+			margin: 0px auto;
+			width: 170px;
+		}
+		article menu {
+			margin: 20px auto;
+			padding: 0;
+			width: 924px;
+		}
+		
+		article menu li:hover {
+			background-color: rgb(9, 0, 0);
+			border-bottom: 6px solid #FFD700;
+			cursor: pointer;
+		}
+		article menu li {
+			background-color: rgba(0,0,0,.6);
+			border-bottom: 5.5px solid #fff;
+			color: #fff;
+			display: inline-block;
+			padding: 20px;
+			margin: 0px 10px;
+			text-align: center;
+			width: 121px;
+			list-style: none;
+		}
+		section.slider {
+			background-color: rgba(0,0,0,.5);
+			height: 217px;
+			margin: 40px auto;
+			padding: 10px;
+			width: 881px;
+		}
+		section.slider div.slide {
+			border: 2px solid #fff;
+			background: url(imgs/spriteweb.png) no-repeat -480px -16px;
+			display: inline-block;
+			height: 190px;
+			margin: 10px;
+			vertical-align: top;
+			width: 264px;
+		}
+		
+		section.slider div.slide:hover div.name {
+			background-color: rgba(255,255,255,0.5);
+			cursor: pointer;
+		}
+		section.content {
+			background-color: rgba(0,0,0,.5);
+			height: 628px;
+			margin: 40px auto;
+			padding: 10px;
+			width: 889px;
+		}
+		section.slider div.slide div.name {
+			background-color: rgba(256,256,256,.3);
+			font-weight: bold;
+			font-size: 1.2em;
+			padding: 18px;
+			text-align: center;
+		}
+		section.content article {
+			margin-top: 0px;
+		}
+		section.content article {
+			background-color: #fff;
+			margin: 10px auto;
+			height: 190px;
+			position: relative;
+		}
+		section.content article:hover p {
+			color: #2E8B57;
+			cursor: pointer;
+		}
+		section.content article div.loogo-l {
+			background: url(imgs/spriteweb.png) no-repeat -297px -493px;
+			height: 80px;
+			position: absolute;
+			top: 57px;
+			left: 50px;
+			width: 80px;
+		}
+		section.content article div.loogo-r {
+			background: url(imgs/spriteweb.png) no-repeat -80px -210px;
+			height: 160px;
+			position: absolute;
+			top: 16px;
+			right: 50px;
+			width: 110px;
+		}
+		section.content article p {
+			color: rgba(0,0,0,.9);
+			height: 110px;
+			position: absolute;
+			top: 0px;
+			left: 182px;
+			line-height: 1.7em;
+			text-align: justify;
+			width: 500px;
+		}
+		footer {
+			background-color: #fff;
+			height: 210px;
+			margin: 10px auto 0px auto;
+			padding: 12px;
+			position: relative;
+			width: 884px;
+		}
+		footer div.presentations {
+			background: url(imgs/spriteweb.png) no-repeat -499px -430px;
+			height: 200px;
+			position: absolute;
+			left: 300px;
+			top: 0px;
+			width: 300px;
+		}
+		footer menu {
+			margin: 20px auto;
+			padding: 0;
+			position: absolute;
+			bottom: -10px;
+			width: 910px;
+		}
+		footer menu li {
+			border-bottom: 6px solid #fff;
+			color: rgba(0,0,0,.8);
+			display: inline-block;
+			list-style: none;
+			padding: 12px;
+			margin: 0px 10px;
+			text-align: center;
+			width: 123px;
+		}
+		footer menu li:hover {
+			border-bottom: 6px solid #2E8B57;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<main class="pag">
+		<article>
+			<section class="logo"></section>
+			<menu>
+				<li>INICIO</li>
+				<li>NOSOTROS</li>
+				<li>PORTAFOLIO</li>
+				<li>SERVICIOS</li>
+				<li>CONTACTO</li>
+			</menu>
+		</article>
+		<section class="slider">
+			<div class="slide">
+				<div class="name">
+					Sprite 01
+				</div>
+			</div>
+			<div class="slide">
+				<div class="name">
+					Sprite 02
+				</div>
+			</div>
+			<div class="slide">
+				<div class="name">
+					Sprite 03
+				</div>
+			</div>
+		</section>
+		<section class="content">
+			<article>
+				<div class="loogo-l"></div>
+				<p>
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus quo a non, ullam tempore sed quas quidem officia quos rerum ad eveniet omnis placeat eos obcaecati architecto assumenda, laudantium. Neque, harum explicabo iure! Laudantium labore similique obcaecati dolores consectetur adipisci nostrum id enim placeat quas, illum asperiores velit ullam in.
+			
+				</p>
+				<div class="loogo-r"></div>
+			</article>
+			<article>
+				<div class="loogo-l"></div>
+				<p>
+					Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Omnis autem eos, fugit, eius delectus reiciendis, voluptatibus rerum dolores a aspernatur, ratione cumque nam voluptatem magni quod aliquam eveniet vel numquam! Quia perspiciatis qui optio sunt eaque aliquid rem, facilis veritatis minima iste eos culpa ipsa possimus, ipsum dolor magni vel.
+				</p>
+				<div class="loogo-r"></div>
+			</article>
+			<article>
+				<div class="loogo-l"></div>
+				<p>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat rem, sed dolorem dicta facere nisi aspernatur repellendus praesentium aliquam, cumque ipsa quam, ullam nostrum? Dolorum similique animi molestias cum rerum nobis? Corrupti est quam voluptas asperiores, ab fugit ea error, quisquam nobis debitis labore et quo ipsa perferendis laborum doloremque.
+				</p>
+				<div class="loogo-r"></div>
+			</article>
+		</section>
+		<footer>
+			<div class="presentations"></div>
+			<menu>
+				<li>INICIO</li>
+				<li>NOSOTROS</li>
+				<li>PORTAFOLIO</li>
+				<li>SERVICIOS</li>
+				<li>CONTACTO</li>
+			</menu>
+		</footer>
+	</main>
+</body>
+</html>
