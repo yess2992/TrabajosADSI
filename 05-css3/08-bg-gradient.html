@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Gradient</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        section {
+            border: 2px solid #696969;
+            height: 250px;
+            margin: 20px auto;
+            width: 400px;
+        }
+        section.bgg1 { background: linear-gradient(to top, #00FFFF, #F08080); }
+        section.bgg2 { background: linear-gradient(45deg, #708090, #98FB98); }
+        section.bgg3 { background: linear-gradient(to bottom, #cc0 40%, 
+                                                              #00c 40%, 
+                                                              #00c 70%, 
+                                                              #c00 70%); 
+        }
+        section.bgg4 { 
+            background: linear-gradient(to right, #008080 50%, #FFFAFA 0%); 
+            background-size: 20px 100%;
+            background-position: center;
+        }
+        section.bgg5 { background: radial-gradient(circle, #FAFAD2, #FA8072); }
+        
+        section.bgg6 { background: radial-gradient(circle, #E6E6FA 20%, 
+                                                           #4B0082 20%, 
+                                                           #4B0082 40%, 
+                                                           #E6E6FA 40%, 
+                                                           #E6E6FA 60%,
+                                                           #4B0082 60%, 
+                                                           #4B0082 80%,
+                                                           #E6E6FA 80%, 
+                                                           #E6E6FA 80% ); 
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1> <span><a href="index.html">&larr;</a></span> Background Gradient</h1>
+        <h3>background: linear-gradient(to top, #00FFFF, #F08080)</h3>
+        <section class="bgg1"></section>
+
+        <h3>background: linear-gradient(45deg, #708090, #98FB98)</h3>
+        <section class="bgg2"></section>
+
+        <h3>background: linear-gradient(to bottom, #cc0 40%, #00c 40%, #00c 70%, #c00 70%)</h3>
+        <section class="bgg3"></section>
+
+        <h3>background: linear-gradient(to right, #008080 50%, #FFFAFA 0%)</h3>
+        <section class="bgg4"></section>
+
+        <h3>background: radial-gradient(circle, #FAFAD2, #FA8072)</h3>
+        <section class="bgg5"></section>
+
+        <h3>background: radial-gradient(circle, #E6E6FA 20%,#4B0082 20%,#4B0082 40%,#E6E6FA 40%,#E6E6FA 60%,#4B0082 60%, #4B0082 80%,#E6E6FA 80%, #E6E6FA 80% )</h3>
+        <section class="bgg6"></section>
+
+    </main>
+</body>
+</html>
