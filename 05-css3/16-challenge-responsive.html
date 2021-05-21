@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Challenge (Responsive - Media Queries)</title>
+
+    <style>
+         @font-face {
+            font-family: BenguiatBold;
+            src: url(fonts/BenguiatBold.ttf);
+        }
+        body {
+            background: #000;
+            border: 6px solid #d11507;
+        }
+        h2 {
+            text-decoration: underline;
+            margin: 0px auto;
+            font-family: BenguiatBold;
+            color: #d11507;
+            font-size: 4em;
+            position: relative;
+            text-align: center;
+        }
+        section {
+            background-color: black;
+            height: 210px;
+            margin: 30px auto;
+            width: 815px;
+            padding: 10px;
+            font-family: BenguiatBold;
+            src: url(fonts/BenguiatBold.ttf);
+            font-size: 13px;
+        }
+
+
+        section article.eleven,
+        section article.mike,
+        section article.madmax,
+        section article.dustin {
+            border: 2px solid #d11507;
+            display: inline-block;
+            margin: 10px;
+            width: 175px;
+            height: 175px;
+            text-align: center;
+        }
+
+        section article.eleven {
+            background: url(imgs/Eleven2.jpg) no-repeat center;
+            background-size: contain;
+        }
+        section article.mike {
+            background: url(imgs/Mike2.png) no-repeat center;
+            background-size: contain;
+        }
+        section article.madmax {
+            background: url(imgs/MadMax.jpg) no-repeat center;
+            background-size: contain;
+        }
+        section article.dustin {
+            background: url(imgs/Dustin.jpg) no-repeat center;
+            background-size: contain;
+        }
+
+
+        section article h4 {
+           background-color: rgba(255, 255, 255, 0.2);
+            height: 20px;
+            margin-top: 125px;
+            text-align: center;
+            padding: 15px;
+        }
+
+        section article h4:hover {
+            cursor:pointer;
+            position: relative;
+            top: -20px;
+            width: 145px;
+            height: 10px;
+            transition: all 0.5s ease-out;
+        }
+
+        section.s2 {
+            border: 2px solid #d11507;
+            background-color: black;
+            height: 210px;
+            margin: 30px auto;
+            width: 770px;
+            padding: 10px;
+            font-family: BenguiatBold;
+            src: url(fonts/BenguiatBold.ttf);
+            font-size: 13px;
+        }
+
+        section.s2 article.img {
+            display: inline-block;
+            margin: 17px;
+            width: 175px;
+            height: 175px;
+            text-align: center;
+            background: url(imgs/Eleven2.jpg) no-repeat center; background-size: contain;
+        }
+
+        section.s2 article#txt {
+            position: absolute;
+            display: inline-block;
+            margin-top: 17px;
+            width: 550px;
+            height: 175px;
+            text-align: justify;
+            color: #d11507;
+        }
+
+
+        section.s2 article.img1 {background: url(imgs/TheMonster.png) no-repeat center; background-size: contain;}
+        section.s2 article.img2 {background: url(imgs/stive.png) no-repeat center; background-size: contain;}
+
+        @media (max-width: 1024px) {
+            section {
+                margin: 20px auto;
+                width: 403px;
+                height: 400px;
+            }
+
+            section.s2 {
+                width: 403px;
+                height: 400px;
+                font-size: 14px;
+            }
+
+            section.s2 article#txt {
+                width: 400px;
+                height: 300px;
+                display: inline-table;
+            }
+            section.s2 article.img {
+            display: inline-block;
+            margin: 17px 120px ;
+            }
+        }
+
+        @media (max-width: 780px) {
+            h2 {
+                inline-size: 7em;
+            }
+
+            section {
+                margin: 20px auto;
+                width: 200px;
+                height: 800px;
+            }
+
+            section.s2 {
+                width: 203px;
+                height: 600px;
+                font-size: 14px;
+            }
+
+            section.s2 article#txt {
+                width: 200px;
+                height: 550px;
+                display: inline-table;
+            }
+            section.s2 article.img {
+            display: inline-block;
+            margin: 17px 15px ;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <header>
+        <h2>STRANGER THINGS</h2>
+    </header>
+    <section>
+        <article class="eleven"> 
+            <h4>Eleven</h4> 
+        </article>
+        <article class="mike"> 
+            <h4>Mike</h4> 
+        </article>
+        <article class="madmax"> 
+            <h4>Mad Max</h4> 
+        </article>
+        <article class="dustin"> 
+            <h4>Dustin</h4> 
+        </article>
+    </section>
+    <section class="s2">
+        <article class="img img1"></article>
+        <article id="txt"><strong>THE MONSTER</strong> 
+        <p> Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Temporibus, laboriosam tenetur nam animi amet deleniti, doloremque. Quos ullam necessitatibus, labore fugit pariatur sapiente quas, aliquid nostrum aut adipisci veniam, ducimus atque eius repellendus voluptates! Quasi consequatur vel quae accusantium, facilis.</p> </article>
+    </section class>
+    <section class="s2">
+        <article class="img img2"></article>
+        <article id="txt"> <strong>STIVE</strong> 
+        <p> Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Fugiat magnam, ipsa voluptatum nobis unde error nisi qui porro minus recusandae commodi harum dolores provident tempora voluptatem mollitia odio reiciendis facilis deleniti dicta beatae, quibusdam, repellendus consequuntur, neque impedit. Eum, nostrum.</p> </article>
+    </section>
+<br>
+<br>
+<br>
+</body>
+</html>
