@@ -1,18 +1,12 @@
-doctype
-html(lang="es")
-	head
-		meta(charset="utf-8")
-		title challenge.pug
-	body
-		h1 CHALLENGE PUG
-		table(width="500px")
-			- var i = 2
-			- var r = 350
-			- var g = 250
-			- var b = 220
-			while i <= 10
-				tr
-					td(style="background-color: rgb("+r+","+g+","+b+"); height: 15px")
-					- i++
-					- r-=23
-					- g-=23
+doctype 
+html(lang="en")
+    head
+    meta(charset="UTF-8")
+    title challenge.pug
+    body 
+        h1 CHALLENGE PUG
+    each val, index in ['#F3E5F5', '#E1BEE7', '#CE93B8', '#BA68C8', '#AB47BC', '#9C27B0', '#8E24AA', '#7B1FA2', '#6A1B9A', '#4A148C']
+    
+            div(style={'background-color': val, padding: '20px', width: '600px'})
+            
+            div(style={'background-color': '#FAEBD7', padding: '1px', width: '500px'})

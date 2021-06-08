@@ -9,3 +9,5 @@
 - **04**[CSS](04-css2.1/)
 - **05**[CSS](05-css3/)
 - **06**[PUG](06-pug/)
+- **07**[SASS](07-sass/)
+- **08**[JAVASCRIPT](08-Javascript/)
