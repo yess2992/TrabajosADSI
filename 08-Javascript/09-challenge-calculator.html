@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Calculator JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* div.calculator - - - - - - - - - - - - - - - - - - - - */
+        div.calculator {
+            background: url(imgs/calculator/skin.svg) no-repeat center;
+            height: 736px;
+            margin: 0 auto 40px auto;
+            position: relative;
+            transition: all 0.5s ease-out;
+            width: 414px;
+        }
+        /* nav.mode - - - - - - - - - - - - - - - - - - - - */
+
+        div.calculator nav.mode {
+            left: 148px;
+            position: absolute;
+            top: 22px;
+            width: 120px;
+        }
+        div.calculator nav.mode a {
+            display: inline-block;
+            height: 40px;
+            transition: transform 0.2s ease-in;
+            width: 60px;
+        }
+        div.calculator nav.mode a#dark:hover {
+            transform: scale(1.04) translateX(2px);
+        }
+        div.calculator nav.mode a#light:hover {
+            transform: scale(1.04) translateX(-2px);
+        }
+        div.calculator nav.mode a:last-child {
+            margin-left: -5px;
+        }
+        div.calculator nav.mode a#light {
+            background: url(imgs/calculator/bt-light-active.svg) no-repeat center;
+        }
+        div.calculator nav.mode a#dark {
+            background: url(imgs/calculator/bt-dark.svg) no-repeat center;
+        }
+        /* div.display - - - - - - - - - - - - - - - - - - - - */
+        div.calculator div.display {
+            font-family: Abel;
+            position: absolute;
+            top: 100px;
+            text-align: right;
+            right: 20px;
+            width: 360px;
+        }
+        div.calculator div.display p#operation {
+            color: #FF7448;
+            font-weight: 300;
+            font-size: 36px;
+            margin: 0;
+        }
+        div.calculator div.display h4#answer {
+            color: #B7661B;
+            font-weight: 400;
+            font-size: 64px;
+            opacity: 0.8;
+            margin: 0;
+            
+        }
+        /* nav.buttons - - - - - - - - - - - - - - - - - - - - */
+        div.calculator nav.buttons {
+            left: 20px;
+            position: absolute;
+            top: 250px;
+            width: 377px;
+        }
+        div.calculator nav.buttons ul::selection {
+            background-color: transparent;
+        }
+        div.calculator nav.buttons ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        div.calculator nav.buttons ul li {
+            background-color: #FF7448;
+            display: inline-block;
+            height: 86px;
+            margin: 0px 6px 5px 0px;
+            opacity: 0.8;
+            transition: transform 0.2s ease-in;
+            width: 86px;
+        }
+        div.calculator nav.buttons ul li:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        div.calculator nav.buttons ul li:nth-child(4n) {
+            margin-right: 0;
+        }
+        div.calculator nav.buttons ul li#bt-clear {
+            background: url(imgs/calculator/bt-clear.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-bs {
+            background: url(imgs/calculator/bt-bs.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-pow {
+            background: url(imgs/calculator/bt-pow.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-div {
+            background: url(imgs/calculator/bt-div.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-1 {
+            background: url(imgs/calculator/bt-1.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-2 {
+            background: url(imgs/calculator/bt-2.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-3 {
+            background: url(imgs/calculator/bt-3.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-prod {
+            background: url(imgs/calculator/bt-prod.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-4 {
+            background: url(imgs/calculator/bt-4.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-5 {
+            background: url(imgs/calculator/bt-5.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-6 {
+            background: url(imgs/calculator/bt-6.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-subs {
+            background: url(imgs/calculator/bt-subs.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-7 {
+            background: url(imgs/calculator/bt-7.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-8 {
+            background: url(imgs/calculator/bt-8.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-9 {
+            background: url(imgs/calculator/bt-9.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-add {
+            background: url(imgs/calculator/bt-add.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-per {
+            background: url(imgs/calculator/bt-per.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-0 {
+            background: url(imgs/calculator/bt-0.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-dot {
+            background: url(imgs/calculator/bt-dot.svg) no-repeat center;
+        }
+        div.calculator nav.buttons ul li#bt-equal {
+            background: url(imgs/calculator/bt-equal.svg) no-repeat center;
+        }
+        /* Mode (light/dark) - - - - - - - - - - - - - - - - - - - - */
+        div.calculator.dark {
+            background: url(imgs/calculator/skin-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.mode a#light {
+            background: url(imgs/calculator/bt-light.svg) no-repeat center;
+        }
+        div.calculator.dark nav.mode a#dark {
+            background: url(imgs/calculator/bt-dark-active.svg) no-repeat center;
+        }
+        div.calculator.dark div.display p#operation {
+            color: #48BDFF;
+        }
+        div.calculator.dark div.display h4#answer {
+            color: orange;
+        }
+        div.calculator.dark nav.buttons ul li#bt-clear {
+            background: url(imgs/calculator/bt-clear-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-bs {
+            background: url(imgs/calculator/bt-bs-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-pow {
+            background: url(imgs/calculator/bt-pow-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-div {
+            background: url(imgs/calculator/bt-div-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-1 {
+            background: url(imgs/calculator/bt-1-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-2 {
+            background: url(imgs/calculator/bt-2-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-3 {
+            background: url(imgs/calculator/bt-3-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-prod {
+            background: url(imgs/calculator/bt-prod-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-4 {
+            background: url(imgs/calculator/bt-4-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-5 {
+            background: url(imgs/calculator/bt-5-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-6 {
+            background: url(imgs/calculator/bt-6-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-subs {
+            background: url(imgs/calculator/bt-subs-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-7 {
+            background: url(imgs/calculator/bt-7-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-8 {
+            background: url(imgs/calculator/bt-8-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-9 {
+            background: url(imgs/calculator/bt-9-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-add {
+            background: url(imgs/calculator/bt-add-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-per {
+            background: url(imgs/calculator/bt-per-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-0 {
+            background: url(imgs/calculator/bt-0-dark.svg) no-repeat center;
+        }
+        div.calculator.dark nav.buttons ul li#bt-dot {
+            background: url(imgs/calculator/bt-dot-dark.svg) no-repeat center;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> Challenge Calculator JS</h1>
+        </header>
+        <section>
+            <div class="calculator">
+                <nav class="mode">
+                    <a href="javascript:;" id="light"></a>
+                    <a href="javascript:;" id="dark"></a>
+                </nav>
+                <div class="display">
+                    <p id="operation"></p>
+                    <h4 id="answer"></h4>
+                </div>
+                <nav class="buttons">
+                    <ul>
+                        <li id="bt-clear"></li>
+                        <li id="bt-bs"></li>
+                        <li id="bt-pow"></li>
+                        <li id="bt-div"></li>
+                        <li id="bt-1"></li>
+                        <li id="bt-2"></li>
+                        <li id="bt-3"></li>
+                        <li id="bt-prod"></li>
+                        <li id="bt-4"></li>
+                        <li id="bt-5"></li>
+                        <li id="bt-6"></li>
+                        <li id="bt-subs"></li>
+                        <li id="bt-7"></li>
+                        <li id="bt-8"></li>
+                        <li id="bt-9"></li>
+                        <li id="bt-add"></li>
+                        <li id="bt-per"></li>
+                        <li id="bt-0"></li>
+                        <li id="bt-dot"></li>
+                        <li id="bt-equal"></li>     
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Variables & Constants - - - - - - - - - - - - - - - -
+        var nchars    = 0;
+        var operation = document.getElementById('operation');
+        var anwser    = document.getElementById('anwser');
+        var operator = '';
+        var num1= '';
+        var num2= '';
+        var numtem = '';
+        var total;
+        var tf = false;
+        
+
+
+
+
+        const skin  = document.querySelector('div.calculator');
+        const light = document.getElementById('light');
+        const dark  = document.getElementById('dark');
+        //Buttons
+        var bt0 = document.getElementById('bt-0');
+        var bt1 = document.getElementById('bt-1');
+        var bt2 = document.getElementById('bt-2');
+        var bt3 = document.getElementById('bt-3');
+        var bt4 = document.getElementById('bt-4');
+        var bt5 = document.getElementById('bt-5');
+        var bt6 = document.getElementById('bt-6');
+        var bt7 = document.getElementById('bt-7');
+        var bt8 = document.getElementById('bt-8');
+        var bt9 = document.getElementById('bt-9');
+        var memori = '';
+
+        // Action
+
+var btClear = document.getElementById('bt-clear');
+var btBs = document.getElementById('bt-bs');
+var btPow = document.getElementById('bt-pow');
+var btDiv = document.getElementById('bt-div');
+var btProd = document.getElementById('bt-prod');
+var btSubs = document.getElementById('bt-subs');
+var btAdd = document.getElementById('bt-add');
+var btPer = document.getElementById('bt-per');
+var btDot = document.getElementById('bt-dot');
+var btEqual = document.getElementById('bt-equal');
+
+
+        // Functions - - - - - - - - - - - - - - - -
+        function validateLength() {
+            if(nchars <= 15) {
+                nchars++;
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function addCharacter(c) {
+            if(validateLength()) {
+                operation.innerText += c;
+                if(c=="+" || c=="*" || c=="-" || c=="/" || c=="^" || c=="%") {
+                    console.log("entre suma");
+                    operator=c;
+                    console.log(operator);
+                    igualar();
+                    numtem='';            
+                }
+
+                else if (c<=9 && c>=0 || c==".")
+                {
+                    numtem += c;  
+                    console.log("valor de numtem es " + numtem);
+                }
+            }
+        }
+
+        function igualar() {
+            if(!tf){
+                if(num1 == '') {
+                    console.log("entre numero 1 = numtem");
+                    num1=numtem;
+                    console.log("numero temporal es" +numtem);
+                    console.log("numero uno es " + num1);
+                }else {
+                    console.log("entre numero 2 = numtem");
+                    if(numtem!='') {
+                        num2=numtem;
+                        console.log(num2); 
+                    }
+                   
+                }
+            }else {
+                num1=answer.textContent;
+                console.log("el valor de numero 1 en tf true es" + num1);
+                num2=numtem;
+                console.log("numero es " + num2);
+            }
+            
+        }
+
+        function resul() {
+            igualar();
+            tf=true;
+            numtem='';
+            if (operator=="+") {
+                answer.innerText = parseFloat(num1) + parseFloat(num2);
+            }
+             else if (operator=="-") {
+                answer.innerText = num1 - num2;
+            }
+             else if (operator=="*") {
+                answer.innerText = num1 * num2;
+            }
+             else if (operator=="/") {
+                answer.innerText = num1 / num2;
+            }
+            else if (operator=="^") {
+                answer.innerText = Math.pow(num1,num2);
+            }
+            else if (operator=="%") {
+                answer.innerText = (num1*num2/100);
+            }
+            answer.innerText=answer.textContent.slice(0,10);
+        }
+
+
+
+        function clearCharacters() {
+            operation.innerText = '';
+            answer.innerText = '';
+            nchars = 0;
+            num1='';
+            num2='';
+            numtem='';
+            operator='';
+            tf=false;
+        }
+
+        // Events - - - - - - - - - - - - - - - -
+        light.onclick = function() {
+            skin.classList.remove('dark');
+        }
+        dark.onclick = function() {
+            skin.classList.add('dark');
+        }
+        bt0.onclick = function() {
+            addCharacter(0);
+        }
+
+        bt1.onclick = function() {
+            addCharacter(1);
+        }
+        bt2.onclick = function() {
+            addCharacter(2);
+        }
+        bt3.onclick = function() {
+            addCharacter(3);
+        }
+        bt4.onclick = function() {
+            addCharacter(4);
+        }
+        bt5.onclick = function() {
+            addCharacter(5);
+        }
+         bt6.onclick = function() {
+            addCharacter(6);
+        }
+        bt7.onclick = function() {
+            addCharacter(7);
+        }
+        bt8.onclick = function() {
+            addCharacter(8);
+        }
+        bt9.onclick = function() {
+            addCharacter(9);
+        }
+        btClear.onclick = function() {
+            clearCharacters();
+        }
+        btBs.onclick = function() {
+            clearCharacters();
+        }
+
+        btAdd.onclick = function(){
+            addCharacter('+');
+        }
+        btProd.onclick = function(){
+            addCharacter('*');
+        }
+        btSubs.onclick = function(){
+            addCharacter('-');
+        }
+        btEqual.onclick = function(){
+            resul();
+        }
+        btPow.onclick = function(){
+            addCharacter('^');
+        }
+        btDiv.onclick = function(){
+            addCharacter('/');
+        }
+        btPer.onclick = function(){
+            addCharacter('%');
+        }
+        btDot.onclick = function(){
+            addCharacter('.');
+        }
+
+    </script>
+    
+</body>
+</html>
