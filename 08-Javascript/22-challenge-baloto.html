@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Pacloto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        div.pacloto {
+            background: transparent url(imgs/baloto/bg.png) no-repeat center;
+            height: 420px;
+            margin: 80px auto;
+            position: relative;
+            width: 820px;
+        }
+        div.pacloto figure.ball {
+            background: transparent url(imgs/baloto/ball1.png) no-repeat center;
+            color: #fff;
+            margin: 0;
+            height: 76px;
+            font-family: 'Mina';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 25px;
+            line-height: 4.8rem;
+            padding: 0;
+            position: absolute;
+            text-decoration-line: underline;
+            text-align: center;
+            top: 176px;
+            width: 76px;
+        }
+        div.pacloto figure.ball.ball1 {
+            left: 250px;
+        }
+        div.pacloto figure.ball.ball2 {
+            left: 320px;
+        }
+        div.pacloto figure.ball.ball3 {
+            left: 390px;
+        }
+        div.pacloto figure.ball.ball4 {
+            left: 460px;
+        }
+        div.pacloto figure.ball.ball5 {
+            left: 530px;
+        }
+        div.pacloto figure.ball.ball6 {
+            color: black;
+            background: transparent url(imgs/baloto/sball.png) no-repeat center;
+            width: 52px;
+            height: 51px;
+            top: 260px;
+            left: 600px;
+            font-family: 'Mina';
+            font-size: 28px;
+            text-align: center;
+            line-height: 4rem;
+
+        }
+        div.pacloto button.btn-play {
+            background: url(imgs/baloto/btn-play.png) no-repeat center;
+            border: none;
+            bottom: 40px;
+            height: 60px;
+            left: 330px;
+            position: absolute;
+            transition: transform 0.2s ease-in;
+            width: 140px;
+            top: 300px;
+        }
+        div.pacloto button.btn-play:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> Challenge Pacloto</h1>
+        </header>
+        <section>
+            <div class="pacloto">
+                <figure class="ball ball1 animate__animated">36</figure>
+                <figure class="ball ball2 animate__animated">15</figure>
+                <figure class="ball ball3 animate__animated">9</figure>
+                <figure class="ball ball4 animate__animated">17</figure>
+                <figure class="ball ball5 animate__animated">27</figure>
+                <figure class="ball ball6 animate__animated">7</figure> 
+                <button class="btn-play"></button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Variables
+
+
+
+    const balls   = document.querySelectorAll('figure.ball');
+    const ball6 = document.getElementsByClassName('figure.ball.ball6');
+    const btnPlay = document.querySelector('button.btn-play');
+
+    btnPlay.onmouseover = () =>btnPlay.classList.add('animated','heartBeat')
+    btnPlay.onmouseout  = () =>btnPlay.classList.remove('animated','heartBeat')
+    btnPlay.onclick = function(){
+
+    btnPlay.classList.add('hiden');
+    play.start();
+    }
+
+let play = {
+
+    start(){
+        play.mostrarballs();
+        play.mostrarball6();
+    },
+    randomGen(min,max){
+        return Math.floor(Math.random()*(max - min)) + min;
+    },
+    mostrarballs(){
+        let numeros = [];
+        let tiempo = 1000;
+        for(let i = 0; i<balls.length; i++){
+            let balota = balls.item(i);
+            let aleatorio = play.randomGen(1,43);
+            if(numeros.indexOf(aleatorio)==-1){
+                numeros.push(aleatorio);
+                balota.innerHTML = aleatorio;
+                setTimeout(()=>{
+                    balota.classList.remove('hiden');
+                    balota.classList.add('animated','bounceInDown');
+                },tiempo);
+                tiempo+=1000;
+            }else{
+                i--;
+            }
+        }
+    },
+    mostrarball6(){
+        ball6[0].innerHTML = play.randomGen(1,16);
+        setTimeout(()=>{
+            ball6[0].classList.remove('hiden');
+            ball6[0].classList.add('animated','bounceInDown')
+        },6000);
+    }
+    
+}
+    </script>
+</body>
+</html>
