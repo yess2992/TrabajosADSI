@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods Date</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> Methods Date JS</h1>
+        </header>
+        <section>
+            <h3>GET</h3>
+            <ul class="list-get"></ul>
+            <h3>SET</h3>
+            <ul class="list-set"></ul>
+        </section>
+    </main>
+
+    <script>
+     // Variables
+     const listGet= document.querySelector('ul.list-get');
+      const listSet= document.querySelector('ul.list-set');
+      var todayDate = new Date;
+      var futureDate = new Date('2022/11/21 08:15:50');
+
+      //Get   
+      listGet.innerHTML = "<li> Current Date: " + todayDate +"</li>";
+       listGet.innerHTML = "<li> Current Year: " + todayDate.getFullYear() +"</li>";
+       listGet.innerHTML = "<li> Current Year: " + todayDate.getFullYear() +"</li>";
+
+    </script>
+</body>
+</html>

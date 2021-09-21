@@ -8,10 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mina&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         div.pacloto {
             background: transparent url(imgs/baloto/bg.png) no-repeat center;
@@ -72,7 +70,7 @@
             height: 60px;
             left: 330px;
             position: absolute;
-            transition: transform 0.2s ease-in;
+            transition: transform 0.3s ease-in;
             width: 140px;
             top: 300px;
         }
@@ -80,6 +78,8 @@
             cursor: pointer;
             transform: scale(1.1);
         }
+
+
     </style>
 </head>
 <body>
@@ -101,23 +101,22 @@
     </main>
 
     <script>
-        // Variables
 
-
+    // Variables
 
     const balls   = document.querySelectorAll('figure.ball');
     const ball6 = document.getElementsByClassName('figure.ball.ball6');
     const btnPlay = document.querySelector('button.btn-play');
 
-    btnPlay.onmouseover = () =>btnPlay.classList.add('animated','heartBeat')
-    btnPlay.onmouseout  = () =>btnPlay.classList.remove('animated','heartBeat')
+    btnPlay.onmouseover = () =>btnPlay.classList.add('animate__bounceInDown')
+    btnPlay.onmouseover  = () =>btnPlay.classList.remove('animate__bounceInDown')
     btnPlay.onclick = function(){
 
-    btnPlay.classList.add('hiden');
+    btnPlay.classList.add('hidden');
     play.start();
     }
 
-let play = {
+    let play = {
 
     start(){
         play.mostrarballs();
@@ -136,8 +135,8 @@ let play = {
                 numeros.push(aleatorio);
                 balota.innerHTML = aleatorio;
                 setTimeout(()=>{
-                    balota.classList.remove('hiden');
-                    balota.classList.add('animated','bounceInDown');
+                    balota.classList.remove('hidden');
+                    balota.classList.add('animate__bounceInDown');
                 },tiempo);
                 tiempo+=1000;
             }else{
@@ -149,7 +148,7 @@ let play = {
         ball6[0].innerHTML = play.randomGen(1,16);
         setTimeout(()=>{
             ball6[0].classList.remove('hiden');
-            ball6[0].classList.add('animated','bounceInDown')
+            ball6[0].classList.add('animate__bounceInDown')
         },6000);
     }
     
