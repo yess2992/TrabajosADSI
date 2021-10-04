@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Arrays</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        figure.vectors {
+            background: transparent url(imgs/vectors/bg.png) no-repeat center;
+            width: 414px;
+            height: 736px;
+            border-radius: 50px;
+            margin: 0px auto;
+            position: relative;
+
+        }
+        figure.vectors h2 {
+            background-color: transparent;
+            color: black;
+            font-family: Prata;
+            font-weight: 600;
+            font-size: 18px;
+            left: 14px;
+            position: absolute;
+        }
+        figure.vectors h2:nth-child(1) {
+            top: 360px;
+        }
+        figure.vectors h2:nth-child(3) {
+            top: 414px;
+        }
+        figure.vectors ul.episodes {
+            height: 160px;
+            list-style: none;
+            left: 40px;
+            position: absolute;
+            padding: 0;
+            top: 250px;
+            width: 334px;
+        }
+        figure.vectors ul.episodes li.ep {
+            display: inline-block;
+            height: 118px;
+            filter: grayscale(2);
+            transition: all 0.2s ease-in;
+            width: 80px;
+            top: 600px;
+        }
+        figure.vectors ul.episodes li.ep:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            filter: grayscale(0);
+        }
+        figure.vectors ul.episodes li.ep.ep1,
+        ul.show-vector li.ep1  {
+            background: transparent url(imgs/vectors/epi1.png) no-repeat center;
+        }
+        figure.vectors ul.episodes li.ep.ep2,
+        ul.show-vector li.ep2 {
+            background: transparent url(imgs/vectors/epi2.png) no-repeat center;
+        }
+        figure.vectors ul.episodes li.ep.ep3,
+        ul.show-vector li.ep3 {
+            background: transparent url(imgs/vectors/epi3.png) no-repeat center;
+        }
+        figure.vectors ul.episodes li.ep.ep4,
+        ul.show-vector li.ep4 {
+            background: transparent url(imgs/vectors/epi4.png) no-repeat center;
+        }
+        figure.vectors ul.episodes li.ep.selected {
+            transform: scale(1.2);
+            filter: grayscale(0);
+        }
+        figure.vectors div.switch {
+            border: 1px solid #B1060F;
+            box-sizing: border-box;
+            border-radius: 40px;
+            cursor: pointer;
+            height: 40px;
+            left: 16px;
+            position: absolute;
+            top: 490px;
+            width: 100px;
+        }
+        figure.vectors div.switch span {
+            color: #B1060F;
+            font-family: Prata;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        figure.vectors div.switch span.right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        figure.vectors div.switch span.left {
+            position: absolute;
+            top: 10px;
+            left: 6px;
+        }
+        figure.vectors div.switch span.hide {
+            display: none;
+        }
+        figure.vectors div.switch.action {
+            top: 550px;
+        }
+        figure.vectors div.switch div.circle {
+            background: #B1060F;
+            border-radius: 15px;
+            height: 30px;
+            left: 21px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            transition: left 0.2s ease-in;
+            width: 30px;
+        }
+        figure.vectors div.switch.checked div.circle {
+            left: 64px;
+        }
+        figure.vectors button {
+            border: none;
+            bottom: 4px;
+            position: absolute;
+            height: 96px;
+            left: 160px;
+            transition: all 0.2s ease-in;
+            width: 96px;
+        }
+        figure.vectors button:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+        figure.vectors button#btn-add {
+            background: transparent url(imgs/vectors/btn-add.png) no-repeat center;
+        }
+        figure.vectors button#btn-remove {
+            background: transparent url(imgs/vectors/btn-remove.png) no-repeat center;
+        }
+        figure.vectors input {
+            border: 1px solid #B1060F;
+            border-radius: 40px;
+            color: #B1060F;
+            font-family: Prata;
+            font-weight: 400;
+            font-size: 14px;
+            height: 34px;
+            left: 15px;
+            outline: none;
+            position: absolute;
+            text-align: center;
+            top: 608px;
+            width: 97px;
+        }
+        ul.show-vector {
+            list-style: none;
+            margin: 40px auto;
+            padding: 0;
+            position: relative;
+            width: 390px;
+        }
+        ul.show-vector li {
+            display: inline-block;
+            height: 100px;
+            transition: all 0.2s ease-in;
+            width: 80px;
+        }
+        ul.show-vector li i {
+            background-color: black;
+            border-radius: 16px;
+            color: #B1060F;
+            font-family: Prata;
+            font-weight: 600;
+            font-size: 9px;
+            font-style: normal;
+            display: block;
+            height: 10px;
+            padding: 4px;
+            text-align: center;
+            width: 8px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> Challenge Arrays</h1>
+        </header>
+        <section>
+            <figure class="vectors">
+                <h2>Select an episode</h2>
+                <ul class="episodes">
+                    <li class="ep ep1 animate__animated"></li>
+                    <li class="ep ep2 animate__animated"></li>
+                    <li class="ep ep3 animate__animated"></li>
+                    <li class="ep ep4 animate__animated"></li>
+                </ul>
+                <h2>2. Select Options:</h2>
+                <div class="switch position">
+                    <span class="right">First</span>
+                    <span class="left hide">Last</span>
+                    <div class="circle"></div>
+                </div>
+                <div class="switch action">
+                    <span class="right">Add</span>
+                    <span class="left hide">Remove</span>
+                    <div class="circle"></div>
+                </div>
+                <input class="num-position" type="number" min="0" max="99">
+                <button id="btn-add"></button>
+            </figure>
+            <ul class="show-vector">
+            </ul>
+        </section>
+    </main>
+
+    <script>
+      // Variables & Constants
+        const episodes   = document.querySelectorAll('li.ep');
+        const switches   = document.querySelectorAll('div.switch');
+        const txtLeft    = document.querySelectorAll('span.left');
+        const txtRight   = document.querySelectorAll('span.right');
+        const btn        = document.querySelector('button');
+        var   numPos     = document.querySelector('input.num-position');
+        var   showVector = document.querySelector('ul.show-vector');
+        var   epArray    = [];
+
+        // Object
+        var vector = {
+            // Attributes
+            epSelected: null,
+            posCheked: 'First',
+            actCheked: 'Add',
+            // Methods
+            clicksSwitches: function() {
+                for (let i = 0; i < switches.length; i++) {
+                    switches[i].onclick = function() {
+                        this.classList.toggle('checked');
+                        txtLeft[i].classList.toggle('hide');
+                        txtRight[i].classList.toggle('hide');
+                        if (i == 0) {
+                            if (txtRight[0].classList.contains('hide')) {
+                                vector.posCheked = 'Last';
+                            } else {
+                                vector.posCheked = 'First';
+                            }
+                        } else {
+                            if (txtRight[1].classList.contains('hide')) {
+                                vector.actCheked = 'Remove';
+                                btn.setAttribute('id', 'btn-remove');
+                            } else {
+                                vector.actCheked = 'Add';
+                                btn.setAttribute('id', 'btn-add');
+                            }
+                        }
+                    };
+                }
+            },
+            clicksepisodes: function() {
+                for (let i = 0; i < episodes.length; i++) {
+                    episodes[i].onclick = function() {
+                        vector.removeSelected();
+                        this.classList.add('selected');
+                        this.classList.add('animate__heartBeat');
+                        vector.epSelected = (i+1);
+                    };
+                }
+            },
+            removeSelected: function() {
+                for (let i = 0; i < episodes.length; i++) {
+                    episodes[i].classList.remove('selected');
+                    episodes[i].classList.remove('animate__heartBeat');
+                }
+            },
+            renderVector: function() {
+                if(this.epSelected == null) {
+                    alert('Please select an episode!');
+                } else {
+                    // Logic
+                    if(numPos.value.length < 1) {
+                        if (vector.posCheked == 'First') {
+                            if (vector.actCheked == 'Add') {
+                                epArray.unshift('ep' + vector.epSelected); // Add First
+                            } else {
+                                epArray.shift(); // Remove First
+                            }
+                        } else {
+                            if (vector.actCheked == 'Add') {
+                                epArray.push('ep' + vector.epSelected); // Add Last
+                            } else {
+                                epArray.pop(); // Remove Last
+                            }
+                        }
+                    } else {
+                        if (vector.actCheked == 'Add') {
+                            epArray.splice(numPos.value, 0, 'ep' + vector.epSelected); // Add Pos
+                        } else {
+                            epArray.splice(numPos.value, 1); // Remove Pos
+                        }
+                    }
+                    //  Render Array
+                    showVector.innerHTML = "";
+                    for (let i = 0; i < epArray.length; i++) {
+                        showVector.innerHTML += "<li class='animate__animated animate__rubberBand "+ epArray[i] +"'> <i>" + i + "</i></li>"; 
+                    }
+                }
+            }
+        }
+        vector.clicksepisodes();
+        vector.clicksSwitches();
+
+        // Action
+        btn.onclick = function() {
+            vector.renderVector();
+        }
+
+    </script>
+    
+</body>
+</html>
