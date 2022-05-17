@@ -1,0 +1,404 @@
+Use the `composer fund` command to find out more!
+> @php artisan vendor:publish --tag=laravel-assets --ansi --force
+No publishable resources for tag [laravel-assets].
+Publishing complete.
+> @php artisan key:generate --ansi
+Application key set successfully.
+
+C:\Users\SENA\Desktop\13- laravel>cd larapp
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan serve
+Starting Laravel development server: http://127.0.0.1:8000
+[Thu May  5 07:50:44 2022] PHP 8.1.5 Development Server (http://127.0.0.1:8000) started
+[Thu May  5 07:50:57 2022] 127.0.0.1:49889 Accepted
+[Thu May  5 07:50:57 2022] 127.0.0.1:49890 Accepted
+[Thu May  5 07:50:57 2022] 127.0.0.1:49889 Closing
+[Thu May  5 07:50:58 2022] 127.0.0.1:49890 [200]: GET /favicon.ico
+[Thu May  5 07:50:58 2022] 127.0.0.1:49890 Closing
+^C
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan make:migration create_categories_table
+Created Migration: 2022_05_05_131951_create_categories_table
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan migrate
+Migration table created successfully.
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table (27.75ms)
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table (20.46ms)
+Migrating: 2019_08_19_000000_create_failed_jobs_table
+Migrated:  2019_08_19_000000_create_failed_jobs_table (20.45ms)
+Migrating: 2019_12_14_000001_create_personal_access_tokens_table
+Migrated:  2019_12_14_000001_create_personal_access_tokens_table (29.37ms)
+Migrating: 2022_05_05_131951_create_categories_table
+
+   Error
+
+  Undefined constant "images"
+
+  at C:\Users\SENA\Desktop\13- laravel\larapp\database\migrations\2022_05_05_131951_create_categories_table.php:19
+     15▕     {
+     16▕         Schema::create('categories', function (Blueprint $table) {
+     17▕             $table->id();
+     18▕             $table->string('name');
+  ➜  19▕             $table->string('image')->default(images/no-category.png);
+     20▕             $table->text('description');
+     21▕             $table->timestamps();
+     22▕         });
+     23▕     }
+
+  1   C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php:256
+      Illuminate\Database\Migrations\Migration@anonymous\C:\Users\SENA\Desktop\13- laravel\larapp\database\migrations\2022_05_05_131951_create_categories_table.php:7$be::{closure}(Object(Illuminate\Database\Schema\Blueprint))
+
+  2   C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Support\helpers.php:302
+      Illuminate\Database\Schema\Builder::Illuminate\Database\Schema\{closure}(Object(Illuminate\Database\Schema\Blueprint))
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan migrate
+Migrating: 2022_05_05_131951_create_categories_table
+Migrated:  2022_05_05_131951_create_categories_table (14.14ms)
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan migrate:rollback
+Rolling back: 2022_05_05_131951_create_categories_table
+Rolled back:  2022_05_05_131951_create_categories_table (11.06ms)
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan migrate:rollback
+Rolling back: 2019_12_14_000001_create_personal_access_tokens_table
+Rolled back:  2019_12_14_000001_create_personal_access_tokens_table (9.42ms)
+Rolling back: 2019_08_19_000000_create_failed_jobs_table
+Rolled back:  2019_08_19_000000_create_failed_jobs_table (3.89ms)
+Rolling back: 2014_10_12_100000_create_password_resets_table
+Rolled back:  2014_10_12_100000_create_password_resets_table (4.14ms)
+Rolling back: 2014_10_12_000000_create_users_table
+Rolled back:  2014_10_12_000000_create_users_table (3.05ms)
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan make:migration create_games_table
+Created Migration: 2022_05_05_151330_create_games_table
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan migrate:reset
+Nothing to rollback.
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan migrate
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table (63.56ms)
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table (19.30ms)
+Migrating: 2019_08_19_000000_create_failed_jobs_table
+Migrated:  2019_08_19_000000_create_failed_jobs_table (20.76ms)
+Migrating: 2019_12_14_000001_create_personal_access_tokens_table
+Migrated:  2019_12_14_000001_create_personal_access_tokens_table (31.74ms)
+Migrating: 2022_05_05_131951_create_categories_table
+Migrated:  2022_05_05_131951_create_categories_table (13.20ms)
+Migrating: 2022_05_05_151330_create_games_table
+Migrated:  2022_05_05_151330_create_games_table (75.40ms)
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan make: migration alter_user_table
+
+
+  Command "make:" is ambiguous.
+  Did you mean one of these?
+      make:cast         Create a new custom Eloquent cast class
+      make:channel      Create a new channel class
+      make:component    Create a new view component class
+      make:command      Create a new Artisan command
+      make:controller   Create a new controller class
+      make:event        Create a new event class
+      make:exception    Create a new custom exception class
+      make:factory      Create a new model factory
+      make:job          Create a new job class
+      make:listener     Create a new event listener class
+      make:mail         Create a new email class
+      make:middleware   Create a new middleware class
+      make:model        Create a new Eloquent model class
+      make:notification Create a new notification class
+      make:observer     Create a new observer class
+      make:policy       Create a new policy class
+      make:provider     Create a new service provider class
+      make:request      Create a new form request class
+      make:resource     Create a new resource
+      make:rule         Create a new validation rule
+      make:scope        Create a new scope class
+      make:seeder       Create a new seeder class
+      make:test         Create a new test class
+      make:migration    Create a new migration file.
+
+
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan make:migration alter_users_table
+Created Migration: 2022_05_05_153731_alter_users_table
+
+C:\Users\SENA\Desktop\13- laravel\larapp>composer require doctrine/dbal
+Info from https://repo.packagist.org: #StandWithUkraine
+Using version ^3.3 for doctrine/dbal
+./composer.json has been updated
+Running composer update doctrine/dbal
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 5 installs, 0 updates, 0 removals
+  - Locking doctrine/cache (2.1.1)
+  - Locking doctrine/dbal (3.3.6)
+  - Locking doctrine/deprecations (v1.0.0)
+  - Locking doctrine/event-manager (1.1.1)
+  - Locking psr/cache (3.0.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 5 installs, 0 updates, 0 removals
+  - Downloading psr/cache (3.0.0)
+  - Downloading doctrine/event-manager (1.1.1)
+  - Downloading doctrine/deprecations (v1.0.0)
+  - Downloading doctrine/cache (2.1.1)
+  - Downloading doctrine/dbal (3.3.6)
+  - Installing psr/cache (3.0.0): Extracting archive
+  - Installing doctrine/event-manager (1.1.1): Extracting archive
+  - Installing doctrine/deprecations (v1.0.0): Extracting archive
+  - Installing doctrine/cache (2.1.1): Extracting archive
+  - Installing doctrine/dbal (3.3.6): Extracting archive
+1 package suggestions were added by new dependencies, use `composer suggest` to see details.
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover --ansi
+Discovered Package: laravel/sail
+Discovered Package: laravel/sanctum
+Discovered Package: laravel/tinker
+Discovered Package: nesbot/carbon
+Discovered Package: nunomaduro/collision
+Discovered Package: spatie/laravel-ignition
+Package manifest generated successfully.
+81 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+> @php artisan vendor:publish --tag=laravel-assets --ansi --force
+No publishable resources for tag [laravel-assets].
+Publishing complete.
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan migrate:refresh
+Rolling back: 2022_05_05_151330_create_games_table
+Rolled back:  2022_05_05_151330_create_games_table (12.59ms)
+Rolling back: 2022_05_05_131951_create_categories_table
+Rolled back:  2022_05_05_131951_create_categories_table (4.04ms)
+Rolling back: 2019_12_14_000001_create_personal_access_tokens_table
+Rolled back:  2019_12_14_000001_create_personal_access_tokens_table (4.94ms)
+Rolling back: 2019_08_19_000000_create_failed_jobs_table
+Rolled back:  2019_08_19_000000_create_failed_jobs_table (4.02ms)
+Rolling back: 2014_10_12_100000_create_password_resets_table
+Rolled back:  2014_10_12_100000_create_password_resets_table (3.77ms)
+Rolling back: 2014_10_12_000000_create_users_table
+Rolled back:  2014_10_12_000000_create_users_table (3.43ms)
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table (21.85ms)
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table (15.66ms)
+Migrating: 2019_08_19_000000_create_failed_jobs_table
+Migrated:  2019_08_19_000000_create_failed_jobs_table (22.68ms)
+Migrating: 2019_12_14_000001_create_personal_access_tokens_table
+Migrated:  2019_12_14_000001_create_personal_access_tokens_table (28.53ms)
+Migrating: 2022_05_05_131951_create_categories_table
+Migrated:  2022_05_05_131951_create_categories_table (13.16ms)
+Migrating: 2022_05_05_151330_create_games_table
+Migrated:  2022_05_05_151330_create_games_table (74.24ms)
+Migrating: 2022_05_05_153731_alter_users_table
+Migrated:  2022_05_05_153731_alter_users_table (43.68ms)
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan make:seeder UserSeeder
+Seeder created successfully.
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisphp artisan make:seeder CategorySeeder
+Could not open input file: artisphp
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan make:seder CategorySeeder
+
+
+  Command "make:seder" is not defined.
+
+  Did you mean one of these?
+      make:cast
+      make:channel
+      make:command
+      make:component
+      make:controller
+      make:event
+      make:exception
+      make:factory
+      make:job
+      make:listener
+      make:mail
+      make:middleware
+      make:migration
+      make:model
+      make:notification
+      make:observer
+      make:policy
+      make:provider
+      make:request
+      make:resource
+      make:rule
+      make:scope
+      make:seeder
+      make:test
+
+
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan make:seeder CategorySeeder
+Seeder created successfully.
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan db:seed
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[HY000]: General error: 1364 Field 'birthdate' doesn't have a default value (SQL: insert into `users` (`fullname`, `email`, `phone`, `gender`, `address`, `role`, `password`, `updated_at`, `created_at`) values (Ned Flanders, flanders@gmail.com, 3218414224, Male, Esquina Avenida Siempre Viva, Admin, $2y$10$yMK4qD0V4brsmIc/3XV8OutY.fJd/G3.Uiz6iu8g6baZTbQ4NpSWm, 2022-05-05 16:25:12, 2022-05-05 16:25:12))
+
+  at C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:742
+    738▕         // If an exception occurs when attempting to run a query, we'll format the error
+    739▕         // message to include the bindings with SQL, which will make this exception a
+    740▕         // lot more helpful to the developer instead of just the database's errors.
+    741▕         catch (Exception $e) {
+  ➜ 742▕             throw new QueryException(
+    743▕                 $query, $this->prepareBindings($bindings), $e
+    744▕             );
+    745▕         }
+    746▕     }
+
+  1   [internal]:0
+      Composer\Autoload\ClassLoader::loadClass("Database\Seeders\UserSeeder")
+
+  2   C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:527
+      PDOException::("SQLSTATE[HY000]: General error: 1364 Field 'birthdate' doesn't have a default value")
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan db:seed
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[HY000]: General error: 1364 Field 'birthdate' doesn't have a default value (SQL: insert into `users` (`fullname`, `email`, `phone`, `gender`, `address`, `password`, `updated_at`, `created_at`) values (Ned Flanders, flanders@gmail.com, 3218414224, Male, Esquina Avenida Siempre Viva, $2y$10$lgEeJ4y1Ph9pwE.zbxDOm.UQFhYESr2x7Ejc1vX5n4hpmhtIlWSQq, 2022-05-05 16:29:56, 2022-05-05 16:29:56))
+
+  at C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:742
+    738▕         // If an exception occurs when attempting to run a query, we'll format the error
+    739▕         // message to include the bindings with SQL, which will make this exception a
+    740▕         // lot more helpful to the developer instead of just the database's errors.
+    741▕         catch (Exception $e) {
+  ➜ 742▕             throw new QueryException(
+    743▕                 $query, $this->prepareBindings($bindings), $e
+    744▕             );
+    745▕         }
+    746▕     }
+
+  1   [internal]:0
+      Composer\Autoload\ClassLoader::loadClass("Database\Seeders\UserSeeder")
+
+  2   C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:527
+      PDOException::("SQLSTATE[HY000]: General error: 1364 Field 'birthdate' doesn't have a default value")
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan db:seed
+Seeding: Database\Seeders\UserSeeder
+Seeded:  Database\Seeders\UserSeeder (52.92ms)
+Seeding: Database\Seeders\CategorySeeder
+Seeded:  Database\Seeders\CategorySeeder (0.02ms)
+
+   Illuminate\Contracts\Container\BindingResolutionException
+
+  Target class [Database\Seeders\GameSeeder] does not exist.
+
+  at C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:877
+    873▕
+    874▕         try {
+    875▕             $reflector = new ReflectionClass($concrete);
+    876▕         } catch (ReflectionException $e) {
+  ➜ 877▕             throw new BindingResolutionException("Target class [$concrete] does not exist.", 0, $e);
+    878▕         }
+    879▕
+    880▕         // If the type is not instantiable, the developer is attempting to resolve
+    881▕         // an abstract type such as an Interface or Abstract Class and there is
+
+  1   C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:875
+      ReflectionException::("Class "Database\Seeders\GameSeeder" does not exist")
+
+  2   C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:875
+      ReflectionClass::__construct("Database\Seeders\GameSeeder")
+
+C:\Users\SENA\Desktop\13- laravel\larapp> php artisan migrate
+Nothing to migrate.
+
+C:\Users\SENA\Desktop\13- laravel\larapp> php artisan migrate
+Nothing to migrate.
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan db:seed
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'flanders@gmail.com' for key 'users_email_unique' (SQL: insert into `users` (`fullname`, `email`, `phone`, `birthdate`, `gender`, `address`, `password`, `updated_at`, `created_at`) values (Ned Flanders, flanders@gmail.com, 3218414224, 1970-02-01, Male, Esquina Avenida Siempre Viva, $2y$10$w4jmJe4xAPadOqx4JfTudOANcvDtnk0SF9vyjBWizLIRyVJd7J5EC, 2022-05-05 16:35:12, 2022-05-05 16:35:12))
+
+  at C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:742
+    738▕         // If an exception occurs when attempting to run a query, we'll format the error
+    739▕         // message to include the bindings with SQL, which will make this exception a
+    740▕         // lot more helpful to the developer instead of just the database's errors.
+    741▕         catch (Exception $e) {
+  ➜ 742▕             throw new QueryException(
+    743▕                 $query, $this->prepareBindings($bindings), $e
+    744▕             );
+    745▕         }
+    746▕     }
+
+  1   [internal]:0
+      Composer\Autoload\ClassLoader::loadClass("Database\Seeders\UserSeeder")
+
+  2   C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:527
+      PDOException::("SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'flanders@gmail.com' for key 'users_email_unique'")
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan db:seed
+Seeding: Database\Seeders\UserSeeder
+Seeded:  Database\Seeders\UserSeeder (48.00ms)
+Seeding: Database\Seeders\CategorySeeder
+Seeded:  Database\Seeders\CategorySeeder (0.03ms)
+
+   Illuminate\Contracts\Container\BindingResolutionException
+
+  Target class [Database\Seeders\GameSeeder] does not exist.
+
+  at C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:877
+    873▕
+    874▕         try {
+    875▕             $reflector = new ReflectionClass($concrete);
+    876▕         } catch (ReflectionException $e) {
+  ➜ 877▕             throw new BindingResolutionException("Target class [$concrete] does not exist.", 0, $e);
+    878▕         }
+    879▕
+    880▕         // If the type is not instantiable, the developer is attempting to resolve
+    881▕         // an abstract type such as an Interface or Abstract Class and there is
+
+  1   C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:875
+      ReflectionException::("Class "Database\Seeders\GameSeeder" does not exist")
+
+  2   C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:875
+      ReflectionClass::__construct("Database\Seeders\GameSeeder")
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan db:seed
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'flanders@gmail.com' for key 'users_email_unique' (SQL: insert into `users` (`fullname`, `email`, `phone`, `birthdate`, `gender`, `address`, `password`, `updated_at`, `created_at`) values (Ned Flanders, flanders@gmail.com, 3218414224, 1970-02-01, Male, Esquina Avenida Siempre Viva, $2y$10$E4/hmpZ6MXFXILNRH7/riOUlUqVXoJ66wWoTycU8mdYQNhpPzCOWC, 2022-05-05 16:39:17, 2022-05-05 16:39:17))
+
+  at C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:742
+    738▕         // If an exception occurs when attempting to run a query, we'll format the error
+    739▕         // message to include the bindings with SQL, which will make this exception a
+    740▕         // lot more helpful to the developer instead of just the database's errors.
+    741▕         catch (Exception $e) {
+  ➜ 742▕             throw new QueryException(
+    743▕                 $query, $this->prepareBindings($bindings), $e
+    744▕             );
+    745▕         }
+    746▕     }
+
+  1   [internal]:0
+      Composer\Autoload\ClassLoader::loadClass("Database\Seeders\UserSeeder")
+
+  2   C:\Users\SENA\Desktop\13- laravel\larapp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:527
+      PDOException::("SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'flanders@gmail.com' for key 'users_email_unique'")
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan db:seed
+Seeding: Database\Seeders\UserSeeder
+Seeded:  Database\Seeders\UserSeeder (48.86ms)
+Database seeding completed successfully.
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan make:model Category
+Model created successfully.
+
+C:\Users\SENA\Desktop\13- laravel\larapp>php artisan make:model Game
+Model created successfully.
+
+C:\Users\SENA\Desktop\13- laravel\larapp>
